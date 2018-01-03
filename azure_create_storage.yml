@@ -1,0 +1,13 @@
+- name: Create storage account
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Get facts for one resource group
+    azure_rm_resourcegroup_facts:
+      name: tower
+
+  - name: Create account
+    azure_rm_storageaccount:
+      resource_group: "{{ resource_group }}"
+      name: "{{ storage_name }}"
+      account_type: "{{ acc_type }}"
