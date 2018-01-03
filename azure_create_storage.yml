@@ -4,6 +4,6 @@
   tasks:
   - name: Create account
     azure_rm_storageaccount:
-      resource_group: "{{ resource_group }}"
-      name: "{{ storage_name }}"
+      resource_group: "{{ rs_group }}"
+      name: "{{ 'storage1' + vm_name  }}"
       account_type: "{{ acc_type }}"
